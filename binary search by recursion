@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+bool binarySearch(int *arr,int start,int end,int key)
+{
+    bool ans;
+    int mid = start +(end - start)/2;
+    if(start > end)
+    {
+        return false;
+    }
+   
+    if(arr[mid] == key)
+    {
+        return true;
+    }
+    if(key > arr[mid])
+    {
+     bool ans =binarySearch(arr,mid +1,end, key) ;  
+    }
+    else  {
+    bool ans= binarySearch(arr,start,mid -1, key);
+    }
+     return ans;
+}
+int main()
+{
+    int arr[]={1,2,3,4,5,6,7};
+    bool result = binarySearch(arr,0,7,11);
+    if(result == 1)
+    {
+        std::cout << "element is present" << std::endl;
+    }
+   else
+    {
+        std::cout << "element is not present" << std::endl;
+    }
+    
+    
+    return 0;
+}
