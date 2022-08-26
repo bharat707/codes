@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+bool isPalindrome(string& str,int start,int end)
+{
+    // base case
+    if(start > end)
+    {
+        return true;
+    }
+    if(str[start] != str[end])
+    {
+        return false;
+    }
+    else 
+    {
+    return isPalindrome(str,start + 1,end - 1);
+    }
+}
+int main()
+{
+    string str = "a b b a";
+    bool result = isPalindrome(str,0,str.length()-1);
+    if(result)
+    {
+        std::cout << "yes string is palindrome" << std::endl;
+    }
+    else {
+        std::cout << "no string is not palindrome" << std::endl;
+    }
+    
+    return 0;
+}
