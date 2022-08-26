@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+void reverseStng(string& str,int s,int e)
+{
+    if(s>e)
+    {
+        return;
+    }
+    swap(str[s],str[e]);
+    s ++;
+    e --;
+    reverseStng(str,s,e);
+    
+}
+int main()
+{
+    string name = {"b h a r a t"};
+    reverseStng(name,0,name.length()-1);
+    cout<<name<<" ";
+    
+    return 0;
+}
